@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login with Captcha</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+
+        <div id="captchaSection">
+
+            <div class="captcha-wrapper">
+                <canvas id="captchaCanvas" width="200" height="60"></canvas>
+                <button type="button" id="refreshCaptcha">↻</button>
+            </div>
+
+            <div class="form-group">
+                <label for="captchaInput">Enter Captcha</label>
+                <input type="text" id="captchaInput">
+            </div>
+
+        </div>
+
+        <div id="messageBox"></div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
