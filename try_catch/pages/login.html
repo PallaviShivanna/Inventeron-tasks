@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with Captcha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+
+    <form id="loginForm" autocomplete="off">
+
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <!-- Captcha Section -->
+        <div id="captchaSection">
+
+            <div class="captcha-wrapper">
+                <canvas id="captchaCanvas" width="200" height="60"></canvas>
+                <button type="button" id="refreshCaptcha">↻</button>
+            </div>
+
+            <div class="form-group">
+                <label for="captchaInput">Enter Captcha</label>
+                <input type="text" id="captchaInput" placeholder="Enter captcha">
+            </div>
+
+        </div>
+
+        <!-- Message Box -->
+        <div id="messageBox"></div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

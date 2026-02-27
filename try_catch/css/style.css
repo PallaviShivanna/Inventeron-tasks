@@ -1,0 +1,163 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 20px;
+}
+
+/* Container Card */
+.container {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+}
+
+/* Title */
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+    font-size: 14px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 6px rgba(78, 115, 223, 0.4);
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #2e59d9;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Captcha Section */
+#captchaSection {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    margin-bottom: 20px;
+}
+
+/* Captcha Wrapper */
+.captcha-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Canvas Styling */
+#captchaCanvas {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f8f9fc;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Refresh Button */
+#refreshCaptcha {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #e2e6f5;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+#refreshCaptcha:hover {
+    background: #cfd6f7;
+}
+
+/* Message Box */
+#messageBox {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+/* Success and Error Messages */
+.success {
+    color: #28a745;
+}
+
+.error {
+    color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .captcha-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #captchaCanvas {
+        width: 100%;
+    }
+}
