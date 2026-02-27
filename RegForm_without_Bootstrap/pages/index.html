@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="main-container">
+
+    <div class="form-card">
+        <h2>Create Account</h2>
+
+        <form id="registrationForm">
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message"></div>
+
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>First Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Last Name</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required placeholder=" ">
+                <label>Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="tel" required placeholder=" ">
+                <label>Phone Number</label>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <input type="password" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" required placeholder=" ">
+                    <label>Confirm Password</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <select required>
+                    <option value="" disabled selected></option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                </select>
+                <label>Gender</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" required>
+                <span>I agree to Terms & Conditions</span>
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
