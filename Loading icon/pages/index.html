@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Demo</title>
+    <title>Async Await Fetch App</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Loading Example</h2>
-        
-        <button id="loadBtn">Load Data</button>
-
-        <!-- Success Result -->
-        <div id="result" class="result">
-            <p class="success-text">Data Loaded Successfully</p>
-        </div>
+    <!-- Full Page Loader -->
+    <div id="loaderOverlay" class="loader-overlay hidden">
+        <div class="spinner"></div>
+        <p>Fetching Data...</p>
     </div>
 
-    <!-- Fullscreen Loading Overlay -->
-    <div id="overlay" class="overlay">
-        <div class="spinner"></div>
+    <div class="container">
+        <div class="card">
+            <h1>User Details</h1>
+            <button id="fetchBtn">Fetch User</button>
+            <div id="result"></div>
+        </div>
     </div>
 
     <script src="../js/script.js"></script>

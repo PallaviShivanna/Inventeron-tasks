@@ -1,25 +1,52 @@
-const button = document.getElementById("loadBtn");
-const overlay = document.getElementById("overlay");
+const fetchBtn = document.getElementById("fetchBtn");
+const loaderOverlay = document.getElementById("loaderOverlay");
 const result = document.getElementById("result");
 
-button.addEventListener("click", function () {
+fetchBtn.addEventListener("click", fetchData);
 
-    result.style.display = "none";
+async function fetchData() {
 
-    button.disabled = true;
-    button.innerText = "Loading...";
+    fetchBtn.disabled = true;
+    loaderOverlay.classList.remove("hidden");
+    result.classList.remove("show");
+    result.innerHTML = "";
 
-    overlay.style.display = "flex";
+    try {
 
-    setTimeout(function () {
+        const randomId = Math.floor(Math.random() * 10) + 1;
+        
+        await new Promise(resolve => setTimeout(resolve, 1500));
 
-        overlay.style.display = "none";
+        const response = await fetch(
+            `https://jsonplaceholder.typicode.com/users/${randomId}`
+        );
 
-        result.style.display = "block";
+        if (!response.ok) {
+            throw new Error("Network error");
+        }
 
-        button.disabled = false;
-        button.innerText = "Load Data";
+        const data = await response.json();
 
-    }, 3000);
+        loaderOverlay.classList.add("hidden");
+        fetchBtn.disabled = false;
 
-});
+        result.innerHTML = `
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>City:</strong> ${data.address.city}</p>
+            <p><strong>Company:</strong> ${data.company.name}</p>
+        `;
+
+        result.classList.add("show");
+
+    } catch (error) {
+
+        loaderOverlay.classList.add("hidden");
+        fetchBtn.disabled = false;
+
+        result.innerHTML = `<p class="error">Failed to fetch data</p>`;
+        result.classList.add("show");
+
+        console.error(error);
+    }
+}
