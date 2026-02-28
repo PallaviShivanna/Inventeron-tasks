@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Centered Button */
+button {
+    display: inline-block;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    margin-top: 40px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Sticky Header */
+th {
+    position: sticky;
+    top: 0;
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* Table Data */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Row Hover */
+tbody tr:hover {
+    background-color: #f1f5f9;
+    transition: 0.2s ease;
+}
+
+/* Fade Animation */
+tr {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Empty State */
+.empty-message {
+    padding: 40px;
+    text-align: center;
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Loader Overlay */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Spinner */
+.spinner {
+    width: 55px;
+    height: 55px;
+    border: 6px solid #e2e8f0;
+    border-top: 6px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
